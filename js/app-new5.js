@@ -19,8 +19,7 @@ let setItemActive = (entries => {
             entry.target.style.background ="linear-gradient(0deg, rgba(200,200,200,250) 0%, rgba(200,200,200,0) 100%)";
             const activeNav = entry.target.getAttribute("data-nav");
             console.log (activeNav)
-            // another condition to put new name for class "your-active-class" on corresponsing active tab
-            currentLi = document.querySelectorAll("a");
+            currentLi = document.querySelectorAll("li");
             currentLi.forEach ( (existLi) => {
                 if (existLi.innerText ==activeNav){
                     existLi.classList.add('your-active-class');
@@ -54,12 +53,11 @@ function start() {
         newLink = contentLink(section.dataset.nav, index+1);
         fregment.appendChild(newLink);
         console.log(fregment);
-        /// use addEventListener to reflect action smooth for scrolling not move directly
+        //// activate the oberver to take an action based on current section
         newLink.addEventListener ("click", (exc) => {
             exc.preventDefault();
             section.scrollIntoView({behavior:"smooth"});
         });
-        //// activate the oberver to take an action based on current section
         observer.observe(section);
       })
       tabs.appendChild(fregment);
@@ -70,8 +68,8 @@ function start() {
 
 /// define fuction to create default link to be used when running forEach loop for this each section 
 function contentLink(itemName, index) {
-    var newList = document.createElement ("li");
-    var newLink = document.createElement ("a");
+    const newList = document.createElement ("li");
+    const newLink = document.createElement ("a");
     newLink.setAttribute('href', `#section${index}`);
     newLink.classList.add('menu__link');
     newLink.appendChild(document.createTextNode (`${itemName}`));
