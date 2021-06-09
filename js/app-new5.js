@@ -19,6 +19,7 @@ let setItemActive = (entries => {
             entry.target.style.background ="linear-gradient(0deg, rgba(200,200,200,250) 0%, rgba(200,200,200,0) 100%)";
             const activeNav = entry.target.getAttribute("data-nav");
             console.log (activeNav)
+            // another condition to put new name for class "your-active-class" on corresponsing active tab
             currentLi = document.querySelectorAll("a");
             currentLi.forEach ( (existLi) => {
                 if (existLi.innerText ==activeNav){
@@ -53,11 +54,12 @@ function start() {
         newLink = contentLink(section.dataset.nav, index+1);
         fregment.appendChild(newLink);
         console.log(fregment);
-        //// activate the oberver to take an action based on current section
+        /// use addEventListener to reflect action smooth for scrolling not move directly
         newLink.addEventListener ("click", (exc) => {
             exc.preventDefault();
             section.scrollIntoView({behavior:"smooth"});
         });
+        //// activate the oberver to take an action based on current section
         observer.observe(section);
       })
       tabs.appendChild(fregment);
