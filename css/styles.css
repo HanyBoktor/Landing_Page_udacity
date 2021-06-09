@@ -6,13 +6,11 @@
  * For simplicity, no reset or normalize is added. 
  * To learn more, visit: https://css-tricks.com/reboot-resets-reasoning/
  *
-
  */
 /* put smooth to move page smoothly not jump */
 /*html {
     scroll-behavior:smooth;
 }
-
 /* ---- Base Rules ---- */
 body {
     background: rgb(136,203,171);
@@ -69,7 +67,8 @@ section {
 
 /* Navigation Styles*/
 .navbar__menu ul {
-    padding-left: 0;
+
+    padding-left: 1%;
     margin: 0;
     text-align: left;
 }
@@ -80,15 +79,16 @@ section {
 
 .navbar__menu li {
     display: inline-block;
-
+    padding-left: 1%;
     font-weight: bold;
-    text-decoration: none;
+    text-decoration:none;
     color: #000;
 }
 
 .navbar__menu .menu__link {
     display: inline-block;
-    padding: 1em;
+    padding: 0.1cm;
+    text-align: left;
     font-weight: bold;
     text-decoration: none;
     color: #000;
