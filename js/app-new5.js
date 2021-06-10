@@ -6,13 +6,22 @@ const fregment = document.createDocumentFragment();
 /// define the option should be follow for IntersectionObserver
 let options = {
     root: null,
-    rootMargin: '-250px',
-    theshold: 0.25
+    rootMargin: '-100px',
+    theshold: 0
 }
 
 /// arrow funtion applied for callback of IntersectionObserver.
 let setItemActive = (entries => {
     entries.forEach (entry => {
+        getAllSections.forEach( (item)=> { 
+            
+            if (item.classList.contains("your-active-class")){
+            item.classList.remove("your-active-class"); 
+            entry.target.style.background = "linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%)";
+
+            }
+            
+            });
          // put if condition if the inetersection is already done, so add class name "your-active-class" and define special background color
         if(entry.isIntersecting) {
             entry.target.classList.add('your-active-class')
@@ -29,12 +38,6 @@ let setItemActive = (entries => {
             })
 
         } 
-        // if not , so remove the  class name "your-active-class" which was added before and return background color to default
-        else {
-            entry.target.classList.remove('your-active-class')
-            entry.target.style.background = "linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%)";
-
-        }
     })
 });
 /// define the Intersection Observer API
