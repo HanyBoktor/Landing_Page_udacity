@@ -6,7 +6,7 @@ const fregment = document.createDocumentFragment();
 /// define the option should be follow for IntersectionObserver
 let options = {
     root: null,
-    rootMargin: '-600px',
+    rootMargin: '-60px',
     theshold: 0.1
 }
 
@@ -38,6 +38,12 @@ let setItemActive = (entries => {
             })
 
         } 
+        // if not , so remove the  class name "your-active-class" which was added before and return background color to default
+        // else {
+        //     entry.target.classList.remove('your-active-class')
+        //     entry.target.style.background = "linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%)";
+
+        // }
     })
 });
 /// define the Intersection Observer API
