@@ -6,8 +6,8 @@ const fregment = document.createDocumentFragment();
 /// define the option should be follow for IntersectionObserver
 let options = {
     root: null,
-    rootMargin: '-100px',
-    theshold: 0
+    rootMargin: '-250px',
+    theshold: 0.25
 }
 
 /// arrow funtion applied for callback of IntersectionObserver.
